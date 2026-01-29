@@ -53,4 +53,5 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
     implementation("com.google.firebase:firebase-database:22.0.1")
     implementation("com.google.firebase:firebase-auth:24.0.1")
+    implementation("br.com.colman.simplecpfvalidator:simple-cpf-validator:2.8.0")
 }

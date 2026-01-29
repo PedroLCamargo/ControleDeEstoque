@@ -51,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
             usuarioLogin?.senha.toString()
         ).addOnCompleteListener { task ->
             if(task.isSuccessful){
-            Log.i("TESTE", "aqui também foi")
                abrirTelaPrincipal()
             }else{
                 //reporta o erro
@@ -78,14 +77,13 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogar.setOnClickListener {
             val email = binding.campoEmail.text.toString()
             val senha = binding.campoSenha.text.toString()
-            Log.i("TESTE", "aqui foi")
             validarLogin()
 
             //validação para garantir que os campos estão preenchidos
             if(!email.isEmpty()){
                 if(!senha.isEmpty()){
-                    usuarioLogin?.email = binding.campoEmail.text.toString()
-                    usuarioLogin?.senha = binding.campoSenha.text.toString()
+                    usuarioLogin?.email = email
+                    usuarioLogin?.senha = senha
                 }else{
                     Toast.makeText(this, "Preencha a senha!", Toast.LENGTH_SHORT).show()
                 }
@@ -98,6 +96,13 @@ class LoginActivity : AppCompatActivity() {
     fun abrirTelaPrincipal(){
         startActivity(Intent(this, TelaPrincipalActivity::class.java))
         finish()
+    }
+
+    fun abrirTelaCadastro(view: View){
+        binding.txtCadastro.setOnClickListener {
+            startActivity(Intent(this, CadastroActivity::class.java))
+            finish()
+        }
     }
 
 }

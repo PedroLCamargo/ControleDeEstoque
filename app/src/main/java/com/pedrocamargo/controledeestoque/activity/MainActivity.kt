@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
 
         if(::autenticacao.isInitialized){
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     //função para verificar se o usuário já está logado
     fun isLoged(){
+        autenticacao.signOut()
         //se já etiver logado inicia a tela principal
         if(autenticacao.currentUser != null){
             startActivity(Intent(this, TelaPrincipalActivity::class.java))
