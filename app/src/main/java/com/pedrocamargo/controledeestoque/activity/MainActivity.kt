@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     //função para verificar se o usuário já está logado
     fun isLoged(){
-        autenticacao.signOut()
+       // autenticacao.signOut()
         //se já etiver logado inicia a tela principal
         if(autenticacao.currentUser != null){
             startActivity(Intent(this, TelaPrincipalActivity::class.java))
